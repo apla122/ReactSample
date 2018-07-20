@@ -1,15 +1,13 @@
-import React, { Component } from "react"
-import { bindActionCreators } from 'redux';
+import React, { Component } from "react";
+import VisibleTodoList from '../containers/VisibleTodoList'
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
-class App extends Component {
+class List extends Component {
   render() {
-    const { value, actions } = this.props;
+    // パスに埋め込まれたパラメータは params から取得できる
+    var id = this.props.params.id;
     return (
-      <div>
-        {this.props.children}
-      </div>
+      <VisibleTodoList />
     )
   }
 }
@@ -28,4 +26,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(List)

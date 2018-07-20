@@ -7,7 +7,7 @@ class NotFound extends Component {
   render() {
     return (
       <div>
-        <h1>HOMEページです</h1>
+        <h1>NotFound</h1>
       </div>
     );
   }

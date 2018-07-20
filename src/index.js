@@ -87,9 +87,9 @@ const store = configureStore(browserHistory, state)
 const history = syncHistoryWithStore(browserHistory, store)
 render(
   <MuiThemeProvider theme={theme}>
-  <Provider store={store}>
-    <Router history={history} routes={routes} />
-  </Provider>,
+    <Provider store={store}>
+      <Router history={history} routes={routes} />
+    </Provider>
   </MuiThemeProvider>,
   document.getElementById("root")
 )

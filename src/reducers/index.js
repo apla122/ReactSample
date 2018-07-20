@@ -1,9 +1,15 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 import counter from './counter'
+import todos from './todos'
+import posts from './postReducer'
+import visibilityFilter from './visibilityFilter'
 
 const rootReducer = combineReducers({
     counter,
+    todos,
+    posts,
+    visibilityFilter,
     routing: routerReducer
 })
 

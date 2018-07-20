@@ -14,11 +14,11 @@ class Login extends Component {
         <h1>ログインページです</h1>
         <h2>↓Linkを使う方法</h2>
         <Link to="home">HOMEへ</Link><br /><br />
-        <Button className="primary" href="home">HOMEへ</Button>
+        <Button variant="raised" className="primary" href="TimeLine">タイムラインへ</Button>
         <h2>↓browserHistoryを使う方法</h2>
-        <Button label="HOMEへ" onTouchTap={() => {browserHistory.push("home")}} primary={true}/>
+        <Button variant="contained" label="POSTリストへ" onClick={() => {browserHistory.push("postlist")}} className="primary">HOMEへ</Button>
         <h2>↓routerActionsを使う方法</h2>
-        <Button label="HOMEへ" onTouchTap={() => {this.props.routerActions.push("home")}} secondary={true}/>
+        <Button variant="outlined" label="LISTへ" onClick={() => {this.props.routerActions.push("list/1")}} className="secondary">LISTへ</Button>
       </div>
     );
   }
