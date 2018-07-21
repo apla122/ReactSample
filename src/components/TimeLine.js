@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PostList from '../containers/PostList'
+import PostList from '../containers/post/PostList'
 
 const TimeLine = () => (
   <PostList />

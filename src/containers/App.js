@@ -3,13 +3,18 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import { theme } from '../myThemeFile'
+
 class App extends Component {
   render() {
     const { value, actions } = this.props;
     return (
-      <div>
-        {this.props.children}
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <div>
+          {this.props.children}
+        </div>
+      </MuiThemeProvider>
     )
   }
 }

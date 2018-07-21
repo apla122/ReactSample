@@ -1,4 +1,16 @@
 import axios from 'axios'
+
+const client = axios.create({
+  // baseURL: 'https://restcountries.eu/rest/v1/all',
+  headers: {
+    // 'Content-Type': 'application/json',
+    // 'X-Requested-With': 'XMLHttpRequest'
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Accept': 'application/json',
+  },
+  // responseType: 'json'
+});
+
 export const GET_POSTS_REQUEST = 'GET_POSTS_REQUEST'
 const getPostsRequest = () => {
   return {
@@ -7,7 +19,7 @@ const getPostsRequest = () => {
 }
 
 export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS'
-const getPostsSuccess = (json) => {  
+const getPostsSuccess = (json) => {
   return {
     type: GET_POSTS_SUCCESS,
     posts: json,
@@ -17,18 +29,43 @@ const getPostsSuccess = (json) => {
 
 export const GET_POSTS_FAILURE = 'GET_POSTS_FAILURE'
 const getPostsFailure = (error) => {
-  type: GET_POSTS_FAILURE,
-  error
+  return {
+    type: GET_POSTS_FAILURE,
+    error
+  }
 }
 
 export const getPosts = () => {
   return (dispatch) => {
     dispatch(getPostsRequest())
-    return axios.get('http://dev.keep.pdc-ok.jp/keepweb/UserRecommended?user_id=5878813402d94')
-      .then(res =>
-        dispatch(getPostsSuccess(res.result.data))
-      ).catch(err => 
+    // return client.get('https://restcountries.eu/rest/v1/all')
+    return client.get('http://weather.livedoor.com/forecast/webservice/json/v1?city=400040')
+      .then(function (res) {
+        console.log('Success response');
+        dispatch(getPostsSuccess(res.data))
+      }
+      ).catch(function (err) {
+        if (err.response) {
+            console.log('Error response');
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(err.response.data);
+          console.log(err.response.status);      // 例：400
+          console.log(err.response.statusText);  // Bad Request
+          console.log(err.response.headers);
+        } else if (err.request) {
+          console.log('Error request');
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(err.request);
+        } else {
+          console.log('Error other');
+          // Something happened in setting up the request that triggered an Error
+          console.log('Error', err.message);
+        }
+        console.log(err.config);
         dispatch(getPostsFailure(err))
-      )
+      })
   }
 }

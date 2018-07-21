@@ -9,7 +9,11 @@ export default function configureStore(history, initialState) {
     rootReducer,
     initialState,
     compose(
-      applyMiddleware(routerMiddleware(history), thunk, logger)
+      applyMiddleware(
+        routerMiddleware(history), 
+        thunk, 
+        logger
+      )
     )
   )
 

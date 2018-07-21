@@ -9,6 +9,7 @@
     "prd": "webpack --mode production",
     "start": "webpack-dev-server --mode development --history-api-fallback"
   },
+  "proxy": "http://localhost:8888",
   "author": "",
   "license": "ISC",
   "dependencies": {
