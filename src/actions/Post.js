@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const client = axios.create({
-  // baseURL: 'https://restcountries.eu/rest/v1/all',
+  // baseURL: 'https://apla122.github.io/ReactSample/test.json',
   headers: {
     // 'Content-Type': 'application/json',
     // 'X-Requested-With': 'XMLHttpRequest'
@@ -38,8 +38,7 @@ const getPostsFailure = (error) => {
 export const getPosts = () => {
   return (dispatch) => {
     dispatch(getPostsRequest())
-    // return client.get('https://restcountries.eu/rest/v1/all')
-    return client.get('http://weather.livedoor.com/forecast/webservice/json/v1?city=400040')
+    return client.get('https://apla122.github.io/ReactSample/test.json')
       .then(function (res) {
         console.log('Success response');
         dispatch(getPostsSuccess(res.data))
