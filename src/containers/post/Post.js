@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Post = ({ _id, name, capital, index}) => (
+const Post = ({ _id, name, capital, index, created_at}) => (
   <li>
-    { name } : { capital } {index}
+    { name } : { capital } {index} {created_at}
   </li>
 )
 
