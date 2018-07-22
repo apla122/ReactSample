@@ -36,9 +36,7 @@ class Countries extends Component{
 };
 
 function mapStateToProps(state) {
-	return {
-		// data: state.example.data
-	}
+	return { data: state.country.data }
 }
 
 function mapDispatchToProps(dispatch) {
