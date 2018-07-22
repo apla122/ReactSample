@@ -12,8 +12,9 @@ export default function configureStore(history, initialState) {
       applyMiddleware(
         routerMiddleware(history), 
         thunk, 
-        logger
-      )
+        logger        
+      ),
+      process.env.NODE_ENV === 'development' && window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   )
 

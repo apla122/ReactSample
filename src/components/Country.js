@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 class Country extends Component{
 	constructor(props){
-		super(props);
+		super(props)
 	}
 
 	render() {
-		const {country} = this.props;
+		const {country} = this.props
 
 		return (
 			<tr>
@@ -19,4 +19,4 @@ class Country extends Component{
 	}
 };
 
-export default Country;
+export default Country

@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 class Spinner extends Component{
 	constructor(props){
-		super(props);
+		super(props)
 	}
 
 	render() {
@@ -12,4 +12,4 @@ class Spinner extends Component{
 	}
 };
 
-export default Spinner;
+export default Spinner

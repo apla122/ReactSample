@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import {Link} from 'react-router';
-import {connect} from 'react-redux';
+import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
-@connect(state => ({routerState: state.router}))
-class NavBar extends Component{
-	constructor(props){
+class NavBar extends Component {
+	constructor(props) {
 		super(props);
 	}
 
@@ -28,4 +27,19 @@ class NavBar extends Component{
 	}
 };
 
-export default NavBar;
+function mapStateToProps(state) {
+	return {
+		routerState: state.router
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		routerActions: bindActionCreators(Object.assign({}, routerActions), dispatch)
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(NavBar)

@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 class ExpectedError extends Component{
 	constructor(props){
-		super(props);
+		super(props)
 	}
 
 	render() {
@@ -14,4 +14,4 @@ class ExpectedError extends Component{
 	}
 };
 
-export default ExpectedError;
+export default ExpectedError

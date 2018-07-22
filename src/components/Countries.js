@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Country from './Country';
 
-@connect(state => ({data: state.example.data}))
 class Countries extends Component{
 	constructor(props){
 		super(props);
@@ -36,4 +35,17 @@ class Countries extends Component{
 	}
 };
 
-export default Countries;
+function mapStateToProps(state) {
+	return {
+		data: state.example.data
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {}
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Countries)

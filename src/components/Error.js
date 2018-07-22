@@ -1,11 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 
-import {connect} from 'react-redux';
-
-@connect(state => ({data: state.example.data}))
 class Error extends Component{
 	constructor(props){
-		super(props);
+		super(props)
 	}
 
 	render() {
@@ -26,4 +24,19 @@ class Error extends Component{
 	}
 };
 
-export default Error;
+function mapStateToProps(state) {
+	return {
+		data: state.example.data
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		routerActions: bindActionCreators(Object.assign({}, routerActions), dispatch)
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Error)

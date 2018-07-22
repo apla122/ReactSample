@@ -22,9 +22,6 @@ const browserHistory = useRouterHistory(createHistory)({
 const state = window.__initialState__
 const store = configureStore(browserHistory, state)
 const history = syncHistoryWithStore(browserHistory, store)
-// const routes = getRoutes(store)
-
-
 
 render(
   <Provider store={store}>
