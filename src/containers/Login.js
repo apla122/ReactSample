@@ -14,7 +14,9 @@ class Login extends Component {
         <h1>ログインページです</h1>
         <h2>↓Linkを使う方法</h2>
         <Link to="home">HOMEへ</Link><br /><br />
-        <Button variant="raised" color="primary" href="TimeLine">タイムラインへ</Button>
+        <Button variant="raised" color="primary" onClick={() => {this.props.routerActions.push("timeline")}}>タイムラインへ</Button>
+        <Button variant="raised" color="primary" onClick={() => {this.props.routerActions.push("list/1")}}>LISTへ</Button>
+        <Button variant="outlined" label="LISTへ" onClick={() => {this.props.routerActions.push("list/1")}} color="secondary">LISTへ</Button>
         <h2>↓browserHistoryを使う方法</h2>
         <Button variant="contained" label="POSTリストへ" onClick={() => {browserHistory.push("postlist")}} color="secondary">HOMEへ</Button>
         <h2>↓routerActionsを使う方法</h2>

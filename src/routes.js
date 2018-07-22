@@ -51,7 +51,7 @@ const routes = (
     <Route path="counter" component={Counter} />
     <Route path="list/:id" component={List} />
     <Route path="postlist" component={PostList} />
-    <Route path="TimeLine" component={TimeLine} />
+    <Route path="timeline" component={TimeLine} />
     <Route path="*" component={NotFound} />
   </Route>
 )
