@@ -37,13 +37,17 @@ class Countries extends Component{
 
 function mapStateToProps(state) {
 	return {
-		data: state.example.data
+		// data: state.example.data
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {}
 }
+
+Countries.defaultProps = {
+	data: [],
+  }
 
 export default connect(
 	mapStateToProps,

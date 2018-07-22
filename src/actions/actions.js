@@ -1,6 +1,6 @@
 import * as types from './actionTypes';
 import axios from 'axios';
-import { pushState } from 'redux-react-router';
+import { pushState } from 'react-router-redux';
 
 function requestData() {
 	return {type: types.REQ_DATA}

@@ -8,7 +8,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 
 import configureStore from './store/configureStore'
 // import { getRoutes } from './routes'
-import routes from './routes'
+import { getRoutes } from './routes'
 
 let basename = "/"
 console.log("NODE_ENV : " + process.env.NODE_ENV)
@@ -21,6 +21,7 @@ const browserHistory = useRouterHistory(createHistory)({
 
 const state = window.__initialState__
 const store = configureStore(browserHistory, state)
+const routes = getRoutes(store)
 const history = syncHistoryWithStore(browserHistory, store)
 
 render(
