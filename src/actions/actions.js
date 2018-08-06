@@ -3,11 +3,11 @@ import axios from 'axios';
 import { pushState } from 'react-router-redux';
 
 function requestData() {
-	return {type: types.REQ_DATA}
+	return { type: types.REQ_DATA }
 };
 
 function receiveData(json) {
-	return{
+	return {
 		type: types.RECV_DATA,
 		data: json
 	}
@@ -21,7 +21,7 @@ function receiveError(json) {
 };
 
 export function fetchData(url) {
-	return function(dispatch) {
+	return function (dispatch) {
 		dispatch(requestData());
 		return axios({
 			url: url,
@@ -29,12 +29,12 @@ export function fetchData(url) {
 			method: 'get',
 			responseType: 'json'
 		})
-			.then(function(response) {
+			.then(function (response) {
 				dispatch(receiveData(response.data));
 			})
-			.catch(function(response){
+			.catch(function (response) {
 				dispatch(receiveError(response.data));
-				dispatch(pushState(null,'/error'));
+				dispatch(pushState(null, '/error'));
 			})
 	}
 };

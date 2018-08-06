@@ -3,7 +3,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import Post from './Post'
-import * as actions from '../../actions/Post'
+import * as actions from 'actions/Post'
+
+import { List } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid'
 
 class PostList extends Component {
 
@@ -14,12 +17,12 @@ class PostList extends Component {
   render() {
     const { posts } = this.props;
     return (
-      <ul>
+      <List>
         {posts.map((post, index) =>
           <Post key={index} {...post} />
         )
         }
-      </ul>
+      </List>
     )
   }
 }
@@ -29,6 +32,7 @@ PostList.propTypes = {
     PropTypes.shape({
       _id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
+      company: PropTypes.string.isRequired,
       created_at: PropTypes.string.isRequired,
       updated_at: PropTypes.string.isRequired
     }).isRequired

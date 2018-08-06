@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Header from '../components/Header'
+import Header from '..//Header'
 import CounterContent from '../components/Counter'
 import * as CounterActions from '../actions/counter'
 

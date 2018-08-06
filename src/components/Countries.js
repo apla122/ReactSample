@@ -1,18 +1,22 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import Country from './Country';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-class Countries extends Component{
-	constructor(props){
+import Header from 'containers/Header'
+import Country from 'components/Country';
+
+class Countries extends Component {
+	constructor(props) {
 		super(props);
 	}
 
 	render() {
 
-		const {data} = this.props;
+		const { data } = this.props;
 
 		return (
+
 			<div className='container'>
+				<Header location={this.props.location} />
 				<table className='table table-bordered table-striped'>
 					<thead>
 						<tr>
@@ -23,11 +27,11 @@ class Countries extends Component{
 						</tr>
 					</thead>
 					<tbody>
-					{data.map(country => {
-						return (
-							<Country key={country.name} country={country} />
-						)
-					})}
+						{data.map(country => {
+							return (
+								<Country key={country.name} country={country} />
+							)
+						})}
 					</tbody>
 				</table>
 			</div>
@@ -45,7 +49,7 @@ function mapDispatchToProps(dispatch) {
 
 Countries.defaultProps = {
 	data: [],
-  }
+}
 
 export default connect(
 	mapStateToProps,

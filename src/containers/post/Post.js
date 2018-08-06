@@ -1,10 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Post = ({ _id, name, capital, index, created_at}) => (
-  <li>
-    { name } : { capital } {index} {created_at}
-  </li>
+import { ListItem, ListItemText } from '@material-ui/core';
+
+const Post = ({ _id, name, company, email, created_at}) => (
+  <div>
+  <ListItem>
+    <ListItemText primary={name} secondary={ company + " " + email + " " +　created_at} />
+  </ListItem>
+  </div>
 )
 
 Post.propTypes = {

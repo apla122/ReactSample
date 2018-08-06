@@ -1,6 +1,6 @@
 {
-  "name": "Preact PWA",
-  "short_name": "Preact PWA",
+  "name": "ReactSample",
+  "short_name": "ReactSample",
   "start_url": "./",
   "background_color": "#ffffff",
   "theme_color": "#3f51b5",
@@ -13,7 +13,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "icon-512x512.png",
+      "src": "icons/512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
