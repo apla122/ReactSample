@@ -28,7 +28,7 @@ const styles = {
   },
 };
 
-var BrowserHistory = require('react-router/lib/BrowserHistory').default;
+var BrowserHistory = require('react-router/lib/browserHistory').default;
 
 class Header extends Component {
 
