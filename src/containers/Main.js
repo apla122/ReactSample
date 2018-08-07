@@ -50,7 +50,7 @@ class Main extends Component {
         <Header location={this.props.location} />
         <br />
         <Typography variant="title" gutterBottom>
-          ログインページです
+          メインページです
         </Typography>
         <Link to="Main">Mainへ</Link><br /><br />
         <Grid container className={classes.root} spacing={24}>
