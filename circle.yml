@@ -24,12 +24,5 @@ deployment:
       - git config --global user.name $USERNAME
       - git config --global user.email $EMAIL
       - npm run build
-      - |
-        cat <<EOF > ./_book/circle.yml
-        general:
-          branches:
-            ignore:
-              - gh-pages
-        EOF
       - npm run publish
       
