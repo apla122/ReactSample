@@ -52,7 +52,7 @@ class Main extends Component {
         <Typography variant="title" gutterBottom>
           メインページです
         </Typography>
-        <Link to="Main">Mainへ</Link><br /><br />
+        <Link to="timeline">Mainへ</Link><br /><br />
         <Grid container className={classes.root} spacing={24}>
           <Grid item xs={12}>
             <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
