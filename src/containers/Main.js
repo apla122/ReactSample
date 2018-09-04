@@ -52,15 +52,20 @@ class Main extends Component {
         <Typography variant="title" gutterBottom>
           メインページです
         </Typography>
-        <Link to="timeline">Mainへ</Link><br /><br />
+        <Link to="timeline">timelineへ</Link><br /><br />
         <Grid container className={classes.root} spacing={24}>
           <Grid item xs={12}>
             <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
-              {[0, 1].map(value => (
-                <Grid key={value} item>
-                  <Paper className={classes.paper} />
-                </Grid>
-              ))}
+              <Grid key={0} item>
+                <Link to="timeline">
+                  <Paper className={classes.paper} >リンク1</Paper>
+                </Link>
+              </Grid>
+              <Grid key={1} item>
+                <Link to="timeline">
+                  <Paper className={classes.paper} >リンク</Paper>
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12}>
