@@ -20,7 +20,7 @@ import {fetchData} from 'actions/actions'
 
 export function getRoutes(store) {
   const loadData = function() {
-    store.dispatch(fetchData('https://restcountries.eu/rest/v1/all'));
+    store.dispatch(fetchData('http://0.0.0.0:8080/countries.json'));
   };
 
   const routes = (

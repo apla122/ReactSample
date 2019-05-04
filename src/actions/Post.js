@@ -1,14 +1,10 @@
 import axios from 'axios'
 
 const client = axios.create({
-  // baseURL: 'https://apla122.github.io/ReactSample/test.json',
   headers: {
-    // 'Content-Type': 'application/json',
-    // 'X-Requested-With': 'XMLHttpRequest'
     'Content-Type': 'application/x-www-form-urlencoded',
     'Accept': 'application/json',
   },
-  // responseType: 'json'
 });
 
 export const GET_POSTS_REQUEST = 'GET_POSTS_REQUEST'
@@ -38,7 +34,7 @@ const getPostsFailure = (error) => {
 export const getPosts = () => {
   return (dispatch) => {
     dispatch(getPostsRequest())
-    return client.get('https://apla122.github.io/ReactSample/test.json')
+    return client.get('http://0.0.0.0:8080/test.json')
       .then(function (res) {
         console.log('Success response');
         dispatch(getPostsSuccess(res.data))
